@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro - Juegos Online</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -43,14 +43,14 @@
     <form class="registracion" th:href="@{/}" th:object="${usuarios}" method="POST" >
         <div class="container">
             <div class="form-group" data-toggle="tooltip" title="Su usuario sólo puede contener letras y números, entre 6 y 15 caracteres.">
-              <label for="usuario">Usuario</label> <!--   th:field="{usuario}" -->
-               <input type="text"   class="form-control" id="GenerarUsuario" placeholder="Ingrese su usuario" value="" >
-               <span style="color:red" class="errorFormControl" id="errorGenerarUsuario"> </span>
+              <label for="usuario">Usuario</label>
+              <input type="text" th:field="{usuario}" class="form-control" id="GenerarUsuario" placeholder="Ingrese su usuario" value="" >
+              <span style="color:red" class="errorFormControl" id="errorGenerarUsuario"> </span>
                 <div class="informacionUsuario">Su usuario sólo puede contener letras y números, entre 6 y 15 caracteres.</div>
             </div>
             <div class="form-group" data-toggle="tooltip" title="Su contraseña sólo puede contener letras y números, entre 6 y 15 caracteres.">
-              <label for="Contraseña">Contraseña</label> <!--  th:field="{password}"  --> 
-               <input type="password" class="form-control" id="Contraseña" placeholder="Ingrese su constraseña" value="" >
+              <label for="Contraseña">Contraseña</label>
+              <input type="password" th:field="{password}" class="form-control" id="Contraseña" placeholder="Ingrese su constraseña" value="" >
               <span style="color:red" class="errorFormControl" id="errorContraseña"> </span>
                 <div class="informacionUsuario">Su contraseña sólo puede contener letras y números, entre 6 y 15 caracteres.</div>
             </div>
@@ -59,9 +59,9 @@
               <span style="color:red" class="errorFormControl" id="errorRepContraseña"> </span>
               <br>
             <div class="form-group">
-               <label for="email">Correo electrónico</label> <!--  th:field="{email}"  --> 
-                <input type="email"  class="form-control" id="Correo_electrónico" placeholder="Ingrese su correo electrónico" value="" required>
-              <span style="color:red" class="errorFormControl" id="errorEmail"></span>
+               <label for="email">Correo electrónico</label>
+               <input type="email" th:field="{email}" class="form-control" id="Correo_electrónico" placeholder="Ingrese su correo electrónico" value="" required>
+               <span style="color:red" class="errorFormControl" id="errorEmail"></span>
             </div>
             <br>
             <p>Sexo: <!-- No habiamos creado tabla en base de datos para sexo -->
@@ -72,18 +72,18 @@
                <span style="color:red" class="errorFormControl" id="errorSexo"></span>
             </p>
             <br>
-            <div id="fechaDeNac"> <!--  th:field="{fechaDeNacimiento}" -->
-               Fecha de Nacimiento: <input type="date"  id="date" name="fecha" size="16" value="">
-                <span style="color:red" class="errorFormControl" id="errorDate"></span>
+            <div id="fechaDeNac">
+               Fecha de Nacimiento: <input type="date" th:field="{fechaDeNacimiento}" id="date" name="fecha" size="16" value="">
+               <span style="color:red" class="errorFormControl" id="errorDate"></span>
             </div>
             <br>
             <br> 
             <p>
              <label for="pais"> País:</label>
                 <select class="" name="pais" id="pais" data-toggle="tooltip" title="Debe seleccionar un País.">
-<!--                    <option value="0" th:field="{pais}">
+                   <option value="0" th:field="{pais}">
                       Selecciona tu Pais
-                   </option> -->
+                   </option>
                  </select>
                <span style="color:red" class="errorFormControl" id="errorPais"></span>
             </p>

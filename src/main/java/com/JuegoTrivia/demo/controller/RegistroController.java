@@ -20,9 +20,9 @@ import com.JuegoTrivia.demo.repository.UsuarioJpaRepository;
 @RequestMapping("registro")
 public class RegistroController {
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String registro() {
-		return "html/registro";
+		return "./html/registro.html";
 	}
 /** Inyecto la instancia del repositorio: es el framework quien se encarga de instanciarnos 
  * el JpaRepository y darle valor a usuarioJpaRepository */
